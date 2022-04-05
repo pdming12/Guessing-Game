@@ -29,24 +29,25 @@ def computer_guess(x):
     elif feedback != "L" and feedback != "H" and feedback != "C":
       print("Invalid feedback!")
       exit()
-  print(f"Correct - The computer has guessed the correct number: {computer_guess}!")
+  print(f"Correct - The computer has guessed the correct number: {computer_guess}")
 
 #Ask the player what gamemode they want to play
 
 print("Number Guesser - v.0.2")
 print("Gamemode: 1 (You guess the number)\nGamemode: 2 (The computer guesses the number)")
-game_choice = input("Do you want to play as the player (P) or the quesser (Q)?\n\n")
+game_choice = input("Do you want to play as the player (1) or the quesser (2)?\n\n")
 
 #If user chooses to play as a player
 
-if game_choice == "P":
-  x = input("Choose the upper bound. Guess a whole number between 1 and that upper bound:\n\n")
+if game_choice == "1":
+  x = input("INSTRUCTIONS: Choose the upper bound. The computer will generate a random whole number between 1 and that upper bound. Guess that number:\n\n")
   player_guess(int(x))
 
 #If user chooses to play as a quesser
 
-elif game_choice == "Q":
-  x = input("Choose the upper bound. The computer will guess a whole number between 1 and that upper bound\n\n")
+elif game_choice == "2":
+  print("INSTRUCTIONS: You will choose the upper bound and the secret number for the computer to guess. Enter 'H' if the computer's guess is too high, 'L' if it's too low and 'C' if it's correct.")
+  x = input("Choose the upper bound:\n\n")
   computer_guess(int(x))
 
 else:
